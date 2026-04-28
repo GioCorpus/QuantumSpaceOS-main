@@ -1,0 +1,38 @@
+[package]
+name = "quantum-core"
+version = "0.1.0"
+edition = "2021"
+description = "Quantum computing core with Q# integration"
+authors = ["Giovanny Corpus Bernal <giovanny.corpus@example.com>"]
+license = "MIT"
+repository = "https://github.com/GioCorpus/QuantumSpaceOS"
+
+[dependencies]
+# Linear algebra
+ndarray = "0.15"
+nalgebra = "0.32"
+num-complex = "0.4"
+
+# Random number generation
+rand = "0.8"
+rand_distr = "0.4"
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# Error handling
+thiserror = "1"
+
+# Logging
+tracing = "0.1"
+
+# Physics constants
+uom = { version = "0.33", features = ["f64"] }
+
+[dev-dependencies]
+criterion = "0.5"
+
+[[bench]]
+name = "quantum_state_ops"
+harness = false

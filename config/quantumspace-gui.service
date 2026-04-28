@@ -1,0 +1,16 @@
+# QuantumSpaceOS GUI Service
+[Unit]
+Description=QuantumSpaceOS Mission Control GUI
+After=graphical-session.target
+Requires=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/opt/quantumspaceos/wayland-gui/quantumspace-gui
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=graphical-session.target

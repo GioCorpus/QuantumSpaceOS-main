@@ -1,0 +1,60 @@
+# QuantumSpaceOS .gitignore
+
+# Build artifacts
+/target/
+**/target/
+Cargo.lock
+**/Cargo.lock
+*.iso
+iso/out/*
+!iso/out/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Q#
+*.qs
+/bin/
+/obj/
+
+# Temporary files
+*.tmp
+*.bak
+*.orig
+
+# Rustup
+.rustup/
+
+# Misc
+*.img
+*.img.xz
+*.tar
+*.gz
+
+# Logs
+*.log
+
+# Config overrides (local)
+config/local.conf

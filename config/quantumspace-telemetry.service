@@ -1,0 +1,16 @@
+# QuantumSpaceOS Telemetry Service
+[Unit]
+Description=QuantumSpaceOS Telemetry API Server
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/quantumspaceos/api/venv/bin/python /opt/quantumspaceos/api/telemetry_api.py
+Restart=on-failure
+RestartSec=3
+Environment=PYTHONUNBUFFERED=1
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,53 @@
+[package]
+name = "wayland-gui"
+version = "0.1.0"
+edition = "2021"
+description = "Minimal Wayland GUI for QuantumSpaceOS: orbital visualization, telemetry, quantum state display"
+authors = ["Giovanny Corpus Bernal <giovanny.corpus@example.com>"]
+license = "MIT"
+repository = "https://github.com/GioCorpus/QuantumSpaceOS"
+
+[[bin]]
+name = "quantumspace-gui"
+path = "src/main.rs"
+
+[dependencies]
+# Window creation & Wayland integration
+winit = { version = "0.29", default-features = false, features = ["wayland-client"] }
+smithay-client-toolkit = "0.16"
+
+# Rendering
+pixels = "0.13"  # Software pixel buffer (low overhead)
+bytemuck = { version = "1", features = ["derive"] }
+
+# Image loading for assets
+image = "0.25"
+
+# Mathematics
+nalgebra = "0.32"
+
+# Math utils
+ glam = "0.25"
+
+# Serialization (telemetry)
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+# Error handling
+anyhow = "1"
+thiserror = "1"
+
+# Async runtime
+tokio = { version = "1", features = ["sync"] }
+
+# Time
+chrono = "0.4"
+
+# Quantum state API (local or remote)
+photonicq-bridge = { path = "../photonicq-bridge" }
+quantum-core = { path = "../quantum-core" }
+flight-sim = { path = "../flight-sim" }

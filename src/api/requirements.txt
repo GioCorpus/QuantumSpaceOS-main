@@ -1,0 +1,11 @@
+fastapi==0.110.0
+uvicorn[standard]==0.29.0
+pydantic==2.6.3
+pydantic-settings==2.2.1
+httpx==0.27.0
+numpy==1.26.4
+# Optional: qsharp (requires .NET SDK)
+# qsharp==0.0.13
+# Quantum client for communicating with Rust services
+# (unused if flight-sim embedded; placeholder)
+# websockets==12.0
